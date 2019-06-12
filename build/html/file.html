@@ -1,0 +1,343 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>client( ).file( ) &mdash; aihub  documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script type="text/javascript" src="_static/jquery.js"></script>
+        <script type="text/javascript" src="_static/underscore.js"></script>
+        <script type="text/javascript" src="_static/doctools.js"></script>
+        <script type="text/javascript" src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="client( ).collection( )" href="collection.html" />
+    <link rel="prev" title="client( ).algo( )" href="algo.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> aihub
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">aihub Python Library</a></li>
+<li class="toctree-l1"><a class="reference internal" href="client.html">client( )</a></li>
+<li class="toctree-l1"><a class="reference internal" href="algo.html">client( ).algo( )</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">client( ).file( )</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#getfile">getFile(‘檔案路徑’)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#example-usage">Example Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#putfile">putFile(‘檔案路徑’)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#collection">collection(‘資料夾名稱’)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Example Usage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filename">fileName(‘檔案名稱’)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Example Usage</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#deletefile">deleteFile(‘檔案路徑’)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Example Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="collection.html">client( ).collection( )</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">aihub</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>client( ).file( )</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/file.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="client-file">
+<span id="file"></span><h1>client( ).file( )<a class="headerlink" href="#client-file" title="Permalink to this headline">¶</a></h1>
+<p>平臺的檔案存取，
+除了使用網站介面進行操作，
+也可以使用本套件進行處理。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>file 的執行身份為 client 宣告時之身份。</p>
+<p class="last">若在演算法端，其身份則為操作演算法的使用者。</p>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+<div class="section" id="getfile">
+<h2>getFile(‘檔案路徑’)<a class="headerlink" href="#getfile" title="Permalink to this headline">¶</a></h2>
+<p>此功能用以抓取檔案，
+抓取的來源不限於使用者個人檔案、演算法產生之檔案、演算法範例檔案。
+只要代入檔案路徑，
+便可以抓取該檔案 Binary 物件。</p>
+<div class="section" id="example-usage">
+<h3>Example Usage<a class="headerlink" href="#example-usage" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aihub</span> <span class="k">import</span> <span class="n">client</span>
+
+<span class="c1">#define the aihub client</span>
+<span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="s1">&#39;使用者權杖&#39;</span><span class="p">)</span>
+
+<span class="c1">#use getFile to get the matrix.csv in testing_data folder.</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">getFile</span><span class="p">(</span><span class="s1">&#39;storge://.my/testing_data/matrix.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="putfile">
+<h2>putFile(‘檔案路徑’)<a class="headerlink" href="#putfile" title="Permalink to this headline">¶</a></h2>
+<p>此功能用以上傳檔案，
+透過此功能可將檔案上傳至使用者個人資料夾，
+亦可透過此功能將演算法執行結果放至使用者演算法資料夾。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">使用此功能時，
+必須使用 .fileName(‘檔案名稱’) 填入檔案名稱。
+若無填入檔案名稱，
+會回傳 Please use .fileName() to set your filename.</p>
+</div>
+<div class="section" id="collection">
+<h3>collection(‘資料夾名稱’)<a class="headerlink" href="#collection" title="Permalink to this headline">¶</a></h3>
+<p>當 client 在使用者端時，
+進行檔案上傳的動作會將資料放置於使用者個人資料夾。
+但使用者必須使用 collection( ) 定義存放檔案的資料夾。
+若該資料夾不存在，
+系統會自動協助進行建立。</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">若 client 在演算法端時，
+則不可呼叫此方法，
+會造成功能執行錯誤。</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h3>Example Usage<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aihub</span> <span class="k">import</span> <span class="n">client</span>
+
+<span class="c1">#define the aihub client</span>
+<span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="s1">&#39;使用者權杖&#39;</span><span class="p">)</span>
+
+<span class="c1">#use putFile to put the result.csv in result_data folder.</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">putFile</span><span class="p">()</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;result_data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span>
+
+<span class="c1">#file_path will be &quot;storage://.my/result_data/result.csv&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="filename">
+<h3>fileName(‘檔案名稱’)<a class="headerlink" href="#filename" title="Permalink to this headline">¶</a></h3>
+<p>在進行檔案上傳時，
+必須使用 filename( ) 定義檔案名稱。</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>若上傳檔案時沒有呼叫此功能，會出現 Please use .fileName() to set your filename. 的錯誤。</p>
+<p class="last">當呼叫此功能，且檔案名稱為空，會出現 Please enter your file name. 的錯誤。</p>
+</div>
+</div>
+<div class="section" id="id2">
+<h3>Example Usage<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aihub</span> <span class="k">import</span> <span class="n">client</span>
+
+<span class="c1">#define the aihub client</span>
+<span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">()</span>
+
+<span class="c1">#use putFile to put the result.csv in user algorithm folder.</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">putFile</span><span class="p">()</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span>
+
+<span class="c1">#file_path will be storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/result.csv</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="line-block">
+<div class="line"><br /></div>
+</div>
+</div>
+</div>
+<div class="section" id="deletefile">
+<h2>deleteFile(‘檔案路徑’)<a class="headerlink" href="#deletefile" title="Permalink to this headline">¶</a></h2>
+<p>若要進行檔案刪除，
+可呼叫此功能進行檔案刪除的動作。</p>
+<div class="section" id="id3">
+<h3>Example Usage<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">aihub</span> <span class="k">import</span> <span class="n">client</span>
+
+<span class="c1">#define the aihub client</span>
+<span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="s1">&#39;使用者權杖&#39;</span><span class="p">)</span>
+
+<span class="c1">#use deleteFile to delete the result.csv.</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">deleteFile</span><span class="p">(</span><span class="s1">&#39;storage://.my/result_data/result.csv&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="collection.html" class="btn btn-neutral float-right" title="client( ).collection( )" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="algo.html" class="btn btn-neutral float-left" title="client( ).algo( )" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, AIHUB
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

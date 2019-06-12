@@ -1,0 +1,30 @@
+Welcome to aihub's documentation!
+=================================
+
+此說明文件提供 AIHUB Python Library 使用說明。
+本套件提供操作 AIHUB 演算法平臺，
+其 client 可對網站演算法、檔案進行操作。
+
+
+### Installation
+AIHUB Python Library 可以透過 pip 安裝，
+安裝方式為： 
+```
+pip install aihub
+```
+
+
+### Example Usage
+```
+from aihub import client
+
+#define the aihub client
+ai_client = client('user_token')
+```
+
+
+. toctree::
+    :maxdepth: 2
+
+   pages/0010-foo
+   pages/0020-bar
