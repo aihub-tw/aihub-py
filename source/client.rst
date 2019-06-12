@@ -58,7 +58,7 @@ client在宣告時，
     若在使用者端未代入使用者權杖，
     會造成Client宣告失敗。
     
-    回傳 Client must have a token! Please use client(\'token\') to enter the token!
+    回傳 Client must have a token! Please use client("token") to enter the token!
 
 Example Usage
 ~~~~~~~~~~~~~~~

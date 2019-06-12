@@ -6,7 +6,7 @@ client( ).algo( )
 透過 client().algo() 進行演算法取用。
 algo 中必須輸入演算法網址。
 
-如：algo('alog://aihub/24b54d6b-8cb3-11e9-a1e2-f45c89a9272d/')
+如：algo("alog://aihub/24b54d6b-8cb3-11e9-a1e2-f45c89a9272d/")
 
 .. note::
 
@@ -14,7 +14,7 @@ algo 中必須輸入演算法網址。
 
 |
 
-post('執行內容')
+post("執行內容")
 ----------------------
 
 透過 post 功能，進行演算法呼叫，並回傳運算結果。
