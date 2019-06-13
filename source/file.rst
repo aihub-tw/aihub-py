@@ -15,8 +15,8 @@ client( ).file( )
 
 |
 
-getFile("檔案路徑")
-----------------------
+getFile(\"檔案路徑\")
+-----------------------
 
 此功能用以抓取檔案，
 抓取的來源不限於使用者個人檔案、演算法產生之檔案、演算法範例檔案。
@@ -38,8 +38,8 @@ Example Usage
 
 |
 
-putFile("檔案路徑")
---------------------
+putFile(\"檔案路徑\")
+-----------------------
 
 此功能用以上傳檔案，
 透過此功能可將檔案上傳至使用者個人資料夾，
@@ -48,12 +48,12 @@ putFile("檔案路徑")
 .. note::
 
     使用此功能時，
-    必須使用 .fileName('檔案名稱') 填入檔案名稱。
+    必須使用 .fileName(\'檔案名稱\') 填入檔案名稱。
     若無填入檔案名稱，
     會回傳 Please use .fileName() to set your filename.
 
 
-collection("資料夾名稱")
+collection(\"資料夾名稱\")
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 當 client 在使用者端時，
@@ -73,20 +73,24 @@ Example Usage
 
 ::
 
+    import pickle
     from aihub import client
 
     #define the aihub client
     ai_client = client('使用者權杖')
 
+    data = range(1, 100)
+    result = pickle.dumps(data)
+
     #use putFile to put the result.csv in result_data folder. 
-    file_path = ai_client.file().putFile().collection('result_data').fileName('result.csv')
+    file_path = ai_client.file().collection('result_data').fileName('result.csv').putFile(result)
 
     #file_path will be "storage://.my/result_data/result.csv"
     print(file_path)
 
 
-fileName("檔案名稱")
-~~~~~~~~~~~~~~~~~~~~
+fileName(\"檔案名稱\")
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 在進行檔案上傳時，
 必須使用 filename( ) 定義檔案名稱。
@@ -98,25 +102,30 @@ fileName("檔案名稱")
     當呼叫此功能，且檔案名稱為空，會出現 Please enter your file name. 的錯誤。
 
 Example Usage
-~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~
 
 ::
 
+    import pickle
     from aihub import client
 
     #define the aihub client
     ai_client = client()
 
+    data = range(1, 100)
+    result = pickle.dumps(data)
+
+
     #use putFile to put the result.csv in user algorithm folder. 
-    file_path = ai_client.file().putFile().fileName('result.csv')
+    file_path = ai_client.file().fileName('result.csv').putFile(result)
 
     #file_path will be storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/result.csv
     print(file_path)
 
 |
 
-deleteFile("檔案路徑")
-----------------------
+deleteFile(\"檔案路徑\")
+---------------------------
 
 若要進行檔案刪除，
 可呼叫此功能進行檔案刪除的動作。
