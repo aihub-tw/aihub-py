@@ -15,7 +15,7 @@ client( ).file( )
 
 |
 
-getFile(\"檔案路徑\")
+getFile(\\'檔案路徑\\')
 -----------------------
 
 此功能用以抓取檔案，
@@ -38,7 +38,7 @@ Example Usage
 
 |
 
-putFile(\"檔案路徑\")
+putFile(\\'檔案路徑\\')
 -----------------------
 
 此功能用以上傳檔案，
@@ -48,12 +48,12 @@ putFile(\"檔案路徑\")
 .. note::
 
     使用此功能時，
-    必須使用 .fileName(\'檔案名稱\') 填入檔案名稱。
+    必須使用 .fileName(\\'檔案名稱\\') 填入檔案名稱。
     若無填入檔案名稱，
     會回傳 Please use .fileName() to set your filename.
 
 
-collection(\"資料夾名稱\")
+collection(\\'資料夾名稱\\')
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 當 client 在使用者端時，
@@ -89,7 +89,7 @@ Example Usage
     print(file_path)
 
 
-fileName(\"檔案名稱\")
+fileName(\\'檔案名稱\\')
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 在進行檔案上傳時，
@@ -124,7 +124,7 @@ Example Usage
 
 |
 
-deleteFile(\"檔案路徑\")
+deleteFile(\\'檔案路徑\\')
 ---------------------------
 
 若要進行檔案刪除，
