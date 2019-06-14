@@ -6,7 +6,7 @@ client( ).algo( )
 透過 client().algo() 進行演算法取用。
 algo 中必須輸入演算法網址。
 
-如：algo("alog://aihub/24b54d6b-8cb3-11e9-a1e2-f45c89a9272d/")
+如：algo(\\'alog://aihub/24b54d6b-8cb3-11e9-a1e2-f45c89a9272d/\\')
 
 .. note::
 
@@ -35,7 +35,7 @@ Example Usage
     #read the testing data from news
     with open('news.txt','r') as f:
         file_sream = f.read()
-        data['test'] = ai_client.file().collection('news').filename('news.txt').putFile()
+        data['test'] = ai_client.file.collection('news').filename('news.txt').putFile()
 
     #convert dict object to json object
     json_data = dumps(data)

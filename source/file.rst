@@ -1,6 +1,6 @@
 .. _file:
 
-client( ).file( )
+client( ).file
 ===================
 
 平臺的檔案存取，
@@ -34,7 +34,7 @@ Example Usage
     ai_client = client('使用者權杖')
 
     #use getFile to get the matrix.csv in testing_data folder. 
-    file = ai_client.file().getFile('storge://.my/testing_data/matrix.csv')
+    file = ai_client.file.getFile('storge://.my/testing_data/matrix.csv')
 
 |
 
@@ -54,7 +54,7 @@ putFile(\\'檔案路徑\\')
 
 
 collection(\\'資料夾名稱\\')
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 當 client 在使用者端時，
 進行檔案上傳的動作會將資料放置於使用者個人資料夾。
@@ -79,11 +79,12 @@ Example Usage
     #define the aihub client
     ai_client = client('使用者權杖')
 
+    #data from algorithm
     data = range(1, 100)
     result = pickle.dumps(data)
 
     #use putFile to put the result.csv in result_data folder. 
-    file_path = ai_client.file().collection('result_data').fileName('result.csv').putFile(result)
+    file_path = ai_client.file.collection('result_data').fileName('result.csv').putFile(result)
 
     #file_path will be "storage://.my/result_data/result.csv"
     print(file_path)
@@ -112,12 +113,13 @@ Example Usage
     #define the aihub client
     ai_client = client()
 
+    #data from algorithm
     data = range(1, 100)
     result = pickle.dumps(data)
 
 
     #use putFile to put the result.csv in user algorithm folder. 
-    file_path = ai_client.file().fileName('result.csv').putFile(result)
+    file_path = ai_client.file.fileName('result.csv').putFile(result)
 
     #file_path will be storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/result.csv
     print(file_path)
@@ -141,4 +143,4 @@ Example Usage
     ai_client = client('使用者權杖')
 
     #use deleteFile to delete the result.csv. 
-    result = ai_client.file().deleteFile('storage://.my/result_data/result.csv')
+    result = ai_client.file.deleteFile('storage://.my/result_data/result.csv')

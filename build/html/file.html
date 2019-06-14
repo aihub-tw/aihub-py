@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>client( ).file( ) &mdash; aihub  documentation</title>
+  <title>client( ).file &mdash; aihub  documentation</title>
   
 
   
@@ -84,7 +84,7 @@
 <li class="toctree-l1"><a class="reference internal" href="index.html">aihub Python Library</a></li>
 <li class="toctree-l1"><a class="reference internal" href="client.html">client( )</a></li>
 <li class="toctree-l1"><a class="reference internal" href="algo.html">client( ).algo( )</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">client( ).file( )</a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">client( ).file</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#getfile">getFile('檔案路徑')</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#example-usage">Example Usage</a></li>
 </ul>
@@ -148,7 +148,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>client( ).file( )</li>
+      <li>client( ).file</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -168,7 +168,7 @@
            <div itemprop="articleBody">
             
   <div class="section" id="client-file">
-<span id="file"></span><h1>client( ).file( )<a class="headerlink" href="#client-file" title="Permalink to this headline">¶</a></h1>
+<span id="file"></span><h1>client( ).file<a class="headerlink" href="#client-file" title="Permalink to this headline">¶</a></h1>
 <p>平臺的檔案存取，
 除了使用網站介面進行操作，
 也可以使用本套件進行處理。</p>
@@ -194,7 +194,7 @@
 <span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="s1">&#39;使用者權杖&#39;</span><span class="p">)</span>
 
 <span class="c1">#use getFile to get the matrix.csv in testing_data folder.</span>
-<span class="n">file</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">getFile</span><span class="p">(</span><span class="s1">&#39;storge://.my/testing_data/matrix.csv&#39;</span><span class="p">)</span>
+<span class="n">file</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">getFile</span><span class="p">(</span><span class="s1">&#39;storge://.my/testing_data/matrix.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="line-block">
@@ -236,11 +236,12 @@
 <span class="c1">#define the aihub client</span>
 <span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="s1">&#39;使用者權杖&#39;</span><span class="p">)</span>
 
+<span class="c1">#data from algorithm</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1">#use putFile to put the result.csv in result_data folder.</span>
-<span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;result_data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;result_data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 <span class="c1">#file_path will be &quot;storage://.my/result_data/result.csv&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
@@ -265,12 +266,13 @@
 <span class="c1">#define the aihub client</span>
 <span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">()</span>
 
+<span class="c1">#data from algorithm</span>
 <span class="n">data</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
 <span class="n">result</span> <span class="o">=</span> <span class="n">pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 
 <span class="c1">#use putFile to put the result.csv in user algorithm folder.</span>
-<span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
 <span class="c1">#file_path will be storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/result.csv</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
@@ -293,7 +295,7 @@
 <span class="n">ai_client</span> <span class="o">=</span> <span class="n">client</span><span class="p">(</span><span class="s1">&#39;使用者權杖&#39;</span><span class="p">)</span>
 
 <span class="c1">#use deleteFile to delete the result.csv.</span>
-<span class="n">result</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">deleteFile</span><span class="p">(</span><span class="s1">&#39;storage://.my/result_data/result.csv&#39;</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">deleteFile</span><span class="p">(</span><span class="s1">&#39;storage://.my/result_data/result.csv&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

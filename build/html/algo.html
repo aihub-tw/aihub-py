@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="client( ).file( )" href="file.html" />
+    <link rel="next" title="client( ).file" href="file.html" />
     <link rel="prev" title="client( )" href="client.html" /> 
 </head>
 
@@ -90,7 +90,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="file.html">client( ).file( )</a></li>
+<li class="toctree-l1"><a class="reference internal" href="file.html">client( ).file</a></li>
 <li class="toctree-l1"><a class="reference internal" href="collection.html">client( ).collection( )</a></li>
 </ul>
 
@@ -160,7 +160,7 @@
 <span id="algo"></span><h1>client( ).algo( )<a class="headerlink" href="#client-algo" title="Permalink to this headline">¶</a></h1>
 <p>透過 client().algo() 進行演算法取用。
 algo 中必須輸入演算法網址。</p>
-<p>如：algo(“alog://aihub/24b54d6b-8cb3-11e9-a1e2-f45c89a9272d/”)</p>
+<p>如：algo('alog://aihub/24b54d6b-8cb3-11e9-a1e2-f45c89a9272d/')</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">在取用演算法前，請先至平臺網頁與演算法進行簽約。</p>
@@ -184,7 +184,7 @@ algo 中必須輸入演算法網址。</p>
 <span class="c1">#read the testing data from news</span>
 <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;news.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
     <span class="n">file_sream</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
-    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="p">()</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filename</span><span class="p">(</span><span class="s1">&#39;news.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">()</span>
+    <span class="n">data</span><span class="p">[</span><span class="s1">&#39;test&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;news&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">filename</span><span class="p">(</span><span class="s1">&#39;news.txt&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">()</span>
 
 <span class="c1">#convert dict object to json object</span>
 <span class="n">json_data</span> <span class="o">=</span> <span class="n">dumps</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
@@ -209,7 +209,7 @@ algo 中必須輸入演算法網址。</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="file.html" class="btn btn-neutral float-right" title="client( ).file( )" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="file.html" class="btn btn-neutral float-right" title="client( ).file" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="client.html" class="btn btn-neutral float-left" title="client( )" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
