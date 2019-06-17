@@ -243,7 +243,7 @@
 <span class="c1">#use putFile to put the result.csv in result_data folder.</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">collection</span><span class="p">(</span><span class="s1">&#39;result_data&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
-<span class="c1">#file_path will be {\\&#39;status\\&#39;: \\&#39;success&#39;, \\&#39;file_path\\&#39;: \\&#39;storage://.my/result_data/result.csv\\&#39;}</span>
+<span class="c1">#file_path will be {&#39;status&#39;: &#39;success&#39;, &#39;file_path&#39;: &#39;storage://.my/result_data/result.csv&#39;}</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -274,7 +274,7 @@
 <span class="c1">#use putFile to put the result.csv in user algorithm folder.</span>
 <span class="n">file_path</span> <span class="o">=</span> <span class="n">ai_client</span><span class="o">.</span><span class="n">file</span><span class="o">.</span><span class="n">fileName</span><span class="p">(</span><span class="s1">&#39;result.csv&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">putFile</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
 
-<span class="c1">#file_path will be {\\&#39;status\\&#39;: \\&#39;success\\&#39;, \\&#39;file_path\\&#39;: \\&#39;storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/\\&#39;} result.csv</span>
+<span class="c1">#file_path will be {&#39;status&#39;: &#39;success&#39;, &#39;file_path&#39;: &#39;storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/&#39;} result.csv</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">file_path</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;file_path&#39;</span><span class="p">))</span>
 </pre></div>
 </div>

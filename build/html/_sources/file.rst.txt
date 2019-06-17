@@ -86,7 +86,7 @@ Example Usage
     #use putFile to put the result.csv in result_data folder. 
     file_path = ai_client.file.collection('result_data').fileName('result.csv').putFile(result)
 
-    #file_path will be {\\'status\\': \\'success', \\'file_path\\': \\'storage://.my/result_data/result.csv\\'}
+    #file_path will be {'status': 'success', 'file_path': 'storage://.my/result_data/result.csv'}
     print(file_path)
 
 
@@ -121,7 +121,7 @@ Example Usage
     #use putFile to put the result.csv in user algorithm folder. 
     file_path = ai_client.file.fileName('result.csv').putFile(result)
 
-    #file_path will be {\\'status\\': \\'success\\', \\'file_path\\': \\'storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/\\'} result.csv
+    #file_path will be {'status': 'success', 'file_path': 'storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/'} result.csv
     print(file_path.get('file_path'))
 
 |
