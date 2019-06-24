@@ -4,7 +4,7 @@ client( ).collection( )
 =========================
 
 在進行檔案上傳前，
-可先透過 client().collection() 進行個人檔案夾的中的資料夾管理。
+可先透過 client().collection() 進行個人檔案夾中的資料夾管理。
 collection() 中須輸入資料夾名稱。
 透過create()	、delete()、remame()進行處理。
 
