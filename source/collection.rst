@@ -32,7 +32,7 @@ Example Usage
     #create testing_data to user folder. 
     result = ai_client.collection('testing_data').create()
 
-    #folder path will be "storage://.my/testing_data"
+    #folder path will be "storage://.my/aihub/testing_data"
     print(result)
 
 |

@@ -34,7 +34,7 @@ Example Usage
     ai_client = client('使用者權杖')
 
     #use getFile to get the matrix.csv in testing_data folder. 
-    file = ai_client.file.getFile('storge://.my/testing_data/matrix.csv')
+    file = ai_client.file.getFile('storge://.my/aihub/testing_data/matrix.csv')
 
 |
 
@@ -86,7 +86,7 @@ Example Usage
     #use putFile to put the result.csv in result_data folder. 
     file_path = ai_client.file.collection('result_data').fileName('result.csv').putFile(result)
 
-    #file_path will be {'status': 'success', 'file_path': 'storage://.my/result_data/result.csv'}
+    #file_path will be {'status': 'success', 'file_path': 'storage://.my/aihub/result_data/result.csv'}
     print(file_path)
 
 
@@ -121,7 +121,7 @@ Example Usage
     #use putFile to put the result.csv in user algorithm folder. 
     file_path = ai_client.file.fileName('result.csv').putFile(result)
 
-    #file_path will be {'status': 'success', 'file_path': 'storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/'} result.csv
+    #file_path will be {'status': 'success', 'file_path': 'storage://.proj/20058228-8c20-11e9-8796-f45c89a9272d/aihub/933ac55c-9661-11e9-af7d-f45c89a9272d/result.csv'} 
     print(file_path.get('file_path'))
 
 |
@@ -143,4 +143,4 @@ Example Usage
     ai_client = client('使用者權杖')
 
     #use deleteFile to delete the result.csv. 
-    result = ai_client.file.deleteFile('storage://.my/result_data/result.csv')
+    result = ai_client.file.deleteFile('storage://.my/aihub/result_data/result.csv')
